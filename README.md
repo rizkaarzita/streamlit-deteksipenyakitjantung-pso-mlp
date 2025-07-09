@@ -5,7 +5,7 @@ Proyek ini merupakan aplikasi berbasis web untuk mendeteksi risiko penyakit jant
 ## 🚀 Fitur Aplikasi
 
 - Input data pasien secara manual melalui antarmuka interaktif.
-- Normalisasi input menggunakan `StandardScaler` dari `scikit-learn`.
+- Normalisasi input menggunakan `MinMaxScaler` dari `scikit-learn`.
 - Prediksi risiko penyakit jantung menggunakan model MLP-PSO yang sudah dilatih.
 - Visualisasi hasil prediksi dengan output **Disease** atau **Non-Disease**.
 - Antarmuka pengguna yang intuitif dan mudah digunakan.
@@ -18,7 +18,7 @@ Model yang digunakan adalah hasil pelatihan **Multilayer Perceptron (MLP)** deng
 ```bash
 streamlit-deteksipenyakitjantung-pso-mlp/
 ├── app_penyakit_jantung.py # File utama Streamlit
-├── scaler.save # Objek scaler (StandardScaler)
+├── scaler.save # Objek scaler (MinMaxScaler)
 ├── model_mlp_pso_savedmodel.zip # Model terlatih dalam format SavedModel (zip)
 ├── requirements.txt # Daftar dependensi Python
 ├── README.md # Dokumentasi (file ini)
