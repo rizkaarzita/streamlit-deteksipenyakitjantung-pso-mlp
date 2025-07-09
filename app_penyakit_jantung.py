@@ -125,13 +125,34 @@ input_scaled = scaler.transform(input_data)
 
 # Prediksi
 if st.button("Prediksi"):
-    prediction = model.predict(input_scaled)
+    # Gunakan fungsi dari signature SavedModel
+    predict_fn = model.signatures["serving_default"]
+    
+    # Konversi ke tensor
+    input_tensor = tf.convert_to_tensor(input_scaled, dtype=tf.float32)
+
+    # Lakukan prediksi
+    prediction_dict = predict_fn(input_tensor)
+
+    # Ambil nilai prediksi dari dictionary
+    prediction = list(prediction_dict.values())[0].numpy()
+
+    # Klasifikasi biner
     pred_label = int(prediction[0][0] > 0.5)
     st.subheader("Hasil Prediksi")
     if pred_label == 1:
         st.error("Disease")
     else:
         st.success("Non-Disease.")
+
+# if st.button("Prediksi"):
+#     prediction = model.predict(input_scaled)
+#     pred_label = int(prediction[0][0] > 0.5)
+#     st.subheader("Hasil Prediksi")
+#     if pred_label == 1:
+#         st.error("Disease")
+#     else:
+#         st.success("Non-Disease.")
     
 
 # Footer
