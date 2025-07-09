@@ -15,13 +15,14 @@ Proyek ini merupakan aplikasi berbasis web untuk mendeteksi risiko penyakit jant
 Model yang digunakan adalah hasil pelatihan **Multilayer Perceptron (MLP)** dengan optimasi hyperparameter menggunakan algoritma **PSO (Particle Swarm Optimization)**. Model disimpan dalam format `SavedModel` agar kompatibel dengan Streamlit Cloud.
 
 ## 🗂️ Struktur File
-streamlit-deteksipenyakitjantung-pso-mlp/
-├── app_penyakit_jantung.py # File utama Streamlit
-├── scaler.save # Objek scaler (StandardScaler)
-├── model_mlp_pso_savedmodel.zip # Model terlatih dalam format SavedModel (zip)
-├── requirements.txt # Daftar dependensi Python
-├── README.md # Dokumentasi (file ini)
 
+## 🧪 Instalasi dan Menjalankan Aplikasi
+
+### 1. Clone repositori ini
+```bash
+git clone https://github.com/rizkaarzita/streamlit-deteksipenyakitjantung-pso-mlp.git
+cd streamlit-deteksipenyakitjantung-pso-mlp
+```
 📊 Dataset
 Model ini dilatih menggunakan dataset Heart Disease UCI Machine Learning yang sudah diproses sebelumnya.
 
