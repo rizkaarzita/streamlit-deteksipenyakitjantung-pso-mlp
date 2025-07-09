@@ -9,12 +9,13 @@ import zipfile
 import os
 
 # Ekstrak dulu jika file zip
-if not os.path.exists("model_mlp_pso_savedmodel"):
-    with zipfile.ZipFile("model_mlp_pso_savedmodel.zip", "r") as zip_ref:
-        zip_ref.extractall(".")
+# if not os.path.exists("model_mlp_pso_savedmodel"):
+#     with zipfile.ZipFile("model_mlp_pso_savedmodel.zip", "r") as zip_ref:
+#         zip_ref.extractall(".")
 
 # Load dari SavedModel folder
-model = tf.keras.models.load_model("model_mlp_pso_savedmodel")
+# model = tf.keras.models.load_model("model_mlp_pso_savedmodel")
+model = tf.keras.models.load_model("model_mlp_pso.h5")
 
 
 # Load model dan scaler
