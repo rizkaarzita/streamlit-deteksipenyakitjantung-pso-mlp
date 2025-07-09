@@ -55,7 +55,7 @@ st.sidebar.markdown("""
     <p>Penyakit jantung adalah salah satu penyebab kematian utama di dunia. Berikut variabel penelitian:</p>
     <ul>
         <li>age: usia pasien</li>
-        <li>sex: jenis kelamin</li>
+        <li>sex: jenis kelamin (0: Perempuan, 1: Laki-laki)</li>
         <li>cp: jenis nyeri dada (0: tidak nyeri, 1: ringan, 2: sedang, 3: parah)</li>
         <li>trestbps: Tekanan darah saat istirahat (mm Hg)</li>
         <li>chol: Kadar kolesterol (mg/dl) (>200 berisiko)</li>
