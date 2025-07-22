@@ -141,9 +141,9 @@ if st.button("Prediksi"):
     pred_label = int(prediction[0][0] > 0.5)
     st.subheader("Hasil Prediksi")
     if pred_label == 1:
-        st.error("Disease")
+        st.error("Memiliki risiko penyakit jantung")
     else:
-        st.success("Non-Disease.")
+        st.success("Tidak memiliki risiko penyakit jantung")
 
 # if st.button("Prediksi"):
 #     prediction = model.predict(input_scaled)
