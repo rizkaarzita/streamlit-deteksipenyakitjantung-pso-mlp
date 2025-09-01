@@ -51,6 +51,7 @@ st.title("🔍 Deteksi Dini Penyakit Jantung")
 st.sidebar.markdown("""
 <div style="background-color:#f9f9f9; padding:15px; border-radius:10px; font-size:14px; line-height:1.6;">
     <h3 style="color:#d62828;">📋 Informasi Variabel Penelitian</h3>
+    <p>Penyakit jantung adalah salah satu penyebab kematian utama di dunia. Berikut variabel penelitian:</p>
     <ul style="padding-left:20px;">
         <li><b>age:</b> usia pasien</li>
         <li><b>sex:</b> jenis kelamin <br>
@@ -211,6 +212,7 @@ if st.button("Prediksi"):
 # Footer
 st.markdown("---")
 st.caption("© 2025 Rizka Dwi Arzita | Skripsi - Identifikasi Penyakit Jantung dengan Model MLP yang dioptimasi PSO")
+
 
 
 
