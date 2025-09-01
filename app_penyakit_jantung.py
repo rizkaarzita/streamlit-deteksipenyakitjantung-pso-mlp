@@ -87,10 +87,10 @@ with col1:
 with col2:
     chol = st.number_input("Kolesterol (mg/dL)", 100, 600, 200)
     fbs = st.selectbox("Gula Darah Puasa > 120 mg/dl?", ["Tidak", "Ya"])
-    restecg = st.selectbox("Hasil EKG Istirahat", ["normal", "kondisi ST-T wave abnormality", "ventricular kiri mengalami hipertropi"])
+    restecg = st.selectbox("Hasil EKG Istirahat", options=[0, 1, 2], format_func=lambda x: ["normal", "kondisi ST-T wave abnormality", "ventricular kiri mengalami hipertropi"][x])
     thalach = st.number_input("Detak Jantung Maksimum", 70, 210, 150)
 with col3:
-    exang = st.selectbox("Angina Induksi Olahraga?", ["Tidak", "Ya"])
+    exang = st.selectbox("Angina Induksi Olahraga?", ["Tidak nyeri", "Menyebabkan nyeri"])
     oldpeak = st.slider("Depresi ST (Oldpeak)", -2.0, 6.5, 1.0, step=0.1)
     slope = st.selectbox("Kemiringan ST", options=[0, 1, 2], format_func=lambda x: ["Upsloping", "Flatsloping", "Downsloping"][x])
     ca = st.selectbox("Jumlah Pembuluh Darah yang tersumbat atau mengalami gangguan (0-3)", [0, 1, 2, 3])
@@ -158,4 +158,5 @@ if st.button("Prediksi"):
 # Footer
 st.markdown("---")
 st.caption("© 2025 Rizka Dwi Arzita | Skripsi - Identifikasi Penyakit Jantung dengan Model MLP yang dioptimasi PSO")
+
 
