@@ -56,17 +56,17 @@ st.sidebar.markdown("""
     <ul>
         <li>age: usia pasien</li>
         <li>sex: jenis kelamin (0: Perempuan, 1: Laki-laki)</li>
-        <li>cp: jenis nyeri dada (0: tidak nyeri, 1: ringan, 2: sedang, 3: parah)</li>
+        <li>cp: jenis nyeri dada (typical angina: nyeri dada yang memiliki gejala biasa, atypical angina: nyeri dada yang tidak bisa diprediksi, non-anginal pain: gejala di luar penyakit jantung, asymptomatic: tanpa gelaja)</li>
         <li>trestbps: Tekanan darah saat istirahat (mm Hg)</li>
         <li>chol: Kadar kolesterol (mg/dl) (>200 berisiko)</li>
         <li>fbs: Gula darah puasa (0: ≤120 mg/dl, 1: >120 mg/dl)</li>
-        <li>restecg: Hasil EKG istirahat (0: normal, 1: ST-T abnormal, 2: pembesaran ventrikel)</li>
+        <li>restecg: Hasil EKG istirahat (0: normal, 1: ST-T abnormal, 2: kondisi saat ventricular kiri mengalami hipertropi)</li>
         <li>Thalach: Denyut jantung maksimum</li>
-        <li>Exang: Angina saat olahraga (0: tidak, 1: ya)</li>
-        <li>Oldpeak: Depresi ST akibat olahraga</li>
-        <li>slope: Kemiringan segmen ST (0: menanjak, 1: datar, 2: menurun)</li>
-        <li>ca: Jumlah pembuluh darah utama (0-3)</li>
-        <li>thal: Hasil tes thalium (1: normal, 2: fixed defect, 3: reversable defect)</li>
+        <li>Exang: Keadaan pasien akan mengalami nyeri dada apabila berolahraga (0: tidak nyeri, 1: menyebabkan nyeri)</li>
+        <li>Oldpeak: Penurunan segmen ST pada EKG disebabkan oleh olahraga </li>
+        <li>slope: Kemiringan segmen ST pada EKG setelah berolahraga (Upsloping: detak jantung yang lebih baik dengan olahraga, Flatsloping: jantung sehat yang khas, Downsloping: tanda-tanda jantung yang tidak sehat)</li>
+        <li>ca: Jumlah pembuluh darah utama (0: tidak ada penyumbatan, 1: satu pembuluh tersumbat, 2: dua pembuluh tersumbat, 3: tiga pembuluh tersumbat)</li>
+        <li>thal: Hasil tes thalium (normal, fixed defect: terdapat bagian jantung yang permanen rusak (jaringan jantung sudah tidak berfungsi normal) , reversable defect: terdapat gangguan aliran darah ke jantung, tapi sifatnya sementara dan bisa membaik setelah istirahat atau pengobatan)</li>
     </ul>
     <p>Deteksi dini dapat membantu pencegahan dan pengobatan lebih efektif.</p>
 </div>
@@ -82,18 +82,18 @@ col1, col2, col3 = st.columns(3)
 with col1:
     age = st.number_input("Usia", 0, 100, 50)
     sex = st.selectbox("Jenis Kelamin", ["Laki-laki", "Perempuan"])
-    cp = st.selectbox("Tipe Nyeri Dada",  options=[0, 1, 2, 3], format_func=lambda x: ["Tidak Nyeri", "Ringan", "Sedang", "Parah"][x])
+    cp = st.selectbox("Tipe Nyeri Dada",  options=[0, 1, 2, 3], format_func=lambda x: ["typical angina", "atypical angina", "non-anginal pain", "asymptomatic"][x])
     trestbps = st.number_input("Tekanan Darah Istirahat (mmHg)", 90, 300, 120)
 with col2:
     chol = st.number_input("Kolesterol (mg/dL)", 100, 600, 200)
     fbs = st.selectbox("Gula Darah Puasa > 120 mg/dl?", ["Tidak", "Ya"])
-    restecg = st.selectbox("Hasil EKG Istirahat", [0, 1, 2])
+    restecg = st.selectbox("Hasil EKG Istirahat", ["normal", "kondisi ST-T wave abnormality", "ventricular kiri mengalami hipertropi"])
     thalach = st.number_input("Detak Jantung Maksimum", 70, 210, 150)
 with col3:
     exang = st.selectbox("Angina Induksi Olahraga?", ["Tidak", "Ya"])
     oldpeak = st.slider("Depresi ST (Oldpeak)", -2.0, 6.5, 1.0, step=0.1)
-    slope = st.selectbox("Kemiringan ST", options=[0, 1, 2], format_func=lambda x: ["Menanjak", "Datar", "Menurun"][x])
-    ca = st.selectbox("Jumlah Pembuluh Darah yang Utama (0-3)", [0, 1, 2, 3])
+    slope = st.selectbox("Kemiringan ST", options=[0, 1, 2], format_func=lambda x: ["Upsloping", "Flatsloping", "Downsloping"][x])
+    ca = st.selectbox("Jumlah Pembuluh Darah yang tersumbat atau mengalami gangguan (0-3)", [0, 1, 2, 3])
     thal_label = st.selectbox(
     "Hasil Tes Thalium (Thalassemia)",
     ["Normal", "Fixed Defect", "Reversable Defect"])
@@ -158,3 +158,4 @@ if st.button("Prediksi"):
 # Footer
 st.markdown("---")
 st.caption("© 2025 Rizka Dwi Arzita | Skripsi - Identifikasi Penyakit Jantung dengan Model MLP yang dioptimasi PSO")
+
