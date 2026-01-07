@@ -1,6 +1,6 @@
 # Deteksi Penyakit Jantung dengan MLP-PSO (Streamlit App)
 
-Proyek ini merupakan aplikasi berbasis web untuk mendeteksi risiko penyakit jantung menggunakan model **Multilayer Perceptron (MLP)** yang telah dioptimasi menggunakan algoritma **Particle Swarm Optimization (PSO)**. Aplikasi ini dibangun menggunakan **Streamlit** dan dapat dijalankan secara lokal atau di-hosting melalui [Streamlit Cloud](https://streamlit.io/).
+Proyek ini merupakan aplikasi berbasis web untuk mendeteksi risiko penyakit jantung menggunakan model **Multilayer Perceptron (MLP)** yang telah dioptimasi menggunakan algoritma **Particle Swarm Optimization (PSO)**. Aplikasi ini dibangun menggunakan **Streamlit** dan dapat dijalankan secara lokal atau di-hosting melalui [Streamlit Cloud](https://streamlit.io/) atau https://app-deteksipenyakitjantung-pso-mlp.streamlit.app/
 
 ## 🚀 Fitur Aplikasi
 
